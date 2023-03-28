@@ -1,0 +1,6 @@
+playerA blabla@uci.edu
+playerB maeu@uci.edu
+playerC seflai@uci.edu
+playerD lilsf@uci.edu
+playerE kimkim@uci.edu
+playerF clidreo@uci.edu
