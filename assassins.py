@@ -3,7 +3,8 @@ import email.mime.multipart
 import email.mime.text
 import smtplib
 
- 
+bigline = "___________________________________________________________" 
+
 smtp_host = "cernmx.cern.ch"
 smtp_port = 25
 
@@ -50,7 +51,7 @@ def main():
 
     
     for i in range(total):
-        m = mail_dict[players[i]] + ": your target is... \n\n\n\n\n\n\n\n\n\n\n\n\n" + targets[(i+1) % total] + ".\n"
+        m = mail_dict[players[i]] + ": your target is... " + bigline + "\n\n\n\n\n\n\n\n\n\n\n\n\n" + bigline + targets[(i+1) % total] + ".\n"
 
         m+= "generated using https://github.com/acs2325/assassin; forked from https://github.com/danny135/assassin."
 
