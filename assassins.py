@@ -52,6 +52,8 @@ def main():
     for i in range(total):
         m = mail_dict[players[i]] + ": your target is... \n\n\n\n\n\n\n\n\n\n\n\n\n" + targets[(i+1) % total] + ".\n"
 
+        m+= "generated using https://github.com/acs2325/assassin; forked from https://github.com/danny135/assassin."
+
         msg = compose_mail(sender_email, receiver_email, sub, m)
         s = smtplib.SMTP(host=smtp_host, port=smtp_port)  # Setting up SMTP server
         s.starttls()
