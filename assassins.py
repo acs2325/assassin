@@ -17,17 +17,10 @@ def compose_mail(origin, destination, subject, message):
     return msg
 
 
-sender_email = "*******@cern.ch"  # Enter your address
-receiver_email = "*********@gmail.com" # Enter receiver address
+sender_email = "xxxxxxx@cern.ch"  # Enter your address
+receiver_email = "xxxxxx@columbia.edu" # Enter receiver address
 m = "This message is sent with Python."
-s = "Your assassin target"
-
-msg = compose_mail(sender_email, receiver_email, s, m)
-s = smtplib.SMTP(host=smtp_host, port=smtp_port)  # Setting up SMTP server
-s.starttls()
-# s.login(MY_ADDRESS, PASSWORD)
-s.send_message(msg)  # send the message via the server
-s.quit()
+sub = "Your assassin target"
 
 def loadPlayers():
     players = []
@@ -57,6 +50,13 @@ def main():
 
     
     for i in range(total):
-        print(mail_dict[players[i]] + ": your target is " + targets[(i+1) % total] + ".\n")
+        m = mail_dict[players[i]] + ": your target is... \n\n\n\n\n\n\n\n\n\n\n\n\n" + targets[(i+1) % total] + ".\n"
+
+        msg = compose_mail(sender_email, receiver_email, sub, m)
+        s = smtplib.SMTP(host=smtp_host, port=smtp_port)  # Setting up SMTP server
+        s.starttls()
+        # s.login(MY_ADDRESS, PASSWORD)
+        s.send_message(msg)  # send the message via the server
+        s.quit()
            
 main()
